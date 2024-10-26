@@ -7,7 +7,15 @@
     padding: 60px;
   }
   
-  input {
+  .add-category{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  input,
+  select {
     background-color: white;
     border-radius: 5px;
     border: 1px solid rgb(97, 32, 158);
@@ -15,7 +23,16 @@
     font-size: 1.2rem;
     outline: none;
     padding: 10px 15px;
-    width: 100%;
+    /* width: 100%; */
+  }
+
+  input{
+    flex: 6;
+  }
+
+  select {
+    flex: auto;
+    margin-left: 10px;
   }
   
   h2 {

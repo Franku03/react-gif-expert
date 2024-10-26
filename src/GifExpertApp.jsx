@@ -3,14 +3,16 @@ import { AddCategory, GifGrid } from './components';
 
 export const GifExpertApp = () => {
 
-  const [categories, setCategories] = useState( ['Gintama'] );
+  const [categories, setCategories] = useState( [{title: 'Gintama', quantity: 10}] );
 
-  const onAddCategories = ( newCategory ) => {
+  const onAddCategories = ( title, quantity ) => {
 
-    if( categories.includes(newCategory) ) return;
+    const newCategory = { title, quantity };
+
+    if( categories.find( category => category.title === title )) return;
 
     setCategories( [ newCategory, ...categories] );  
-
+    
   }
 
   return (
@@ -24,7 +26,7 @@ export const GifExpertApp = () => {
       { 
         categories.map( category => (
             <GifGrid 
-              key={ category } 
+              key={ category.title } 
               category={ category } 
             />
         )) 
