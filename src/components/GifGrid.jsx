@@ -1,5 +1,7 @@
+import PropTypes from "prop-types";
 import { GifItem } from "./GifItem";
 import { useFetchGifs } from "../hooks/useFetchGifs";
+
 
 export const GifGrid = ({ category }) => {
 
@@ -14,7 +16,7 @@ export const GifGrid = ({ category }) => {
             }
 
 
-            <div className="card-grid">
+            <div className="card-grid" aria-label={category}>
                 {
                     images.map( ( img ) => (
                         <GifItem 
@@ -28,6 +30,9 @@ export const GifGrid = ({ category }) => {
     )
 }
 
+GifGrid.propTypes = {
+    category: PropTypes.string.isRequired,
+}
 
 
 
