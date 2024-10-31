@@ -16,7 +16,7 @@ export const GifGrid = ({ category }) => {
             }
 
 
-            <div className="card-grid" aria-label={category}>
+            <div className="card-grid">
                 {
                     images.map( ( img ) => (
                         <GifItem 
